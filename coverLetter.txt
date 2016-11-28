@@ -1,0 +1,47 @@
+Name: Mariel Frank
+
+Ethics Statement: Other than anything noted in the disclosures
+below, the code submitted is of my design and my design alone.
+I recieved no help nor used any references, resources, and had no
+discussion with other classmates. I understand the Univeristy
+Policy concerning ethics and understand that violating this
+policy will result in drastic repercussions.
+
+Disclosures: Please note any discussions, use of supplemental
+resources, use of pre-existing code including programming language
+libraries. If you have nothing to disclose, please type "no
+disclosures".
+
+1) I referenced a linked list class that I had written entirely on my own for another course. I did not copy it exactly but used it to build and debug
+   the linked list class I used in this project.
+
+2) I spoke with a TA about my decision to use linked lists rather than arrays. The discussion was purely theorhetical.
+
+
+Summary of your design and implementation: Describe the design of
+your structure and make mention of the design elements used to
+improve efficiency.
+
+1) Linked List structure: I chose a linked list due to the benefit of efficient memory managment at the cost of having to traverse the list to access
+   elements. The linked list has a tail pointer to efficiently insert elements into the end of the list. Additionally, the list maintains the
+   polynomial terms in decreasing order of exponent for efficiency in other algorithms.
+2) I maintained the coefficient and exponent pairs as integers to decrease space requirements. The evaluate function returns a long long type to reduce
+   the risk of overflow.
+3) I used the properties of exponents to speed up the function raiseTo(). Instead of multiplying a term by itself the specified number of times in the
+   power, the algorithm breaks up the multiplication to reduce the step count.
+4) I chose not to implement a bit-shift method of multiplication. I reasoned that the extra steps it would take to determine if a bit-shift is possible,
+   along with the infrequency that it would be possible, would be just as inefficient as using the built in multiplication method.
+5) In the evaluate function, I decided to implement several value comparisons before getting to the general case. I did this to speed up the cases
+   required in the main output of this project. The values 1 and 2 are computed frequently enough to justify the extra comparisons.
+
+
+Notes to the grader (describe the state of your program. Is it
+fuly functional? Do some operations work while others do not?):
+
+1) The program is functional. The exponentiate operation works for valid integer values but returns an overflow error when raising a polynomial
+   to a large exponent (usually around power = 15).
+
+Compliation instructions:
+
+1) Use command line argument to access file.
+2) Then simply compile and run from main.
